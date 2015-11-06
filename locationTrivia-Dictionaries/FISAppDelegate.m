@@ -15,5 +15,59 @@
  *  Write your method implementations here.
  
  */
+- (NSString *)stringByTruncatingNameOfLocation:(NSDictionary *)location toLength:(NSUInteger)length {
+    if (length > [location[@"name"] length]) {
+        length = [location[@"name"] length];
+    }
+    
+    NSString *modifiedString = [location[@"name"] substringToIndex:length];
+
+    return modifiedString;
+}
+
+- (NSDictionary *)dictionaryForLocationWithName:(NSString *)name latitude:(CGFloat)latitude longitude:(CGFloat)longitude{
+    
+    NSMutableDictionary *locationWithName = [[NSMutableDictionary alloc]init];
+    
+    locationWithName[@"name"] = name;
+    locationWithName[@"latitude"] = @(latitude);
+    locationWithName[@"longitude"] = @(longitude);
+    return locationWithName;
+}
+
+- (NSArray *)namesOfLocations:(NSArray *)locations{
+    NSMutableArray *namesOfLocations = [[NSMutableArray alloc]init];
+    
+    for (NSDictionary *location in locations){
+        [namesOfLocations addObject:location[@"name"]];
+    }
+    
+    return namesOfLocations;
+};
+
+- (BOOL)dictionaryIsValidLocation:(NSDictionary *)dictionary{
+    BOOL dictionaryIsValidLocation = NO;
+    
+    if ([ [dictionary allKeys] containsObject:@"name"] &&
+        [ [dictionary allKeys] containsObject:@"latitude"] &&
+        [ [dictionary allKeys] containsObject:@"longitude"] &&
+        [dictionary count] == 3 ) {
+        
+        dictionaryIsValidLocation = YES;
+    }
+
+
+    return dictionaryIsValidLocation;
+}
+
+- (NSDictionary *)locationNamed:(NSString *)name inLocations:(NSArray *)locations{
+    for (NSDictionary *location in locations){
+        if ([location[@"name"] isEqualToString:name]) {
+            return location;
+        }
+    }
+    
+    return nil;
+}
 
 @end
