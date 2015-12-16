@@ -18,7 +18,7 @@
 
 - (NSString *)stringByTruncatingNameOfLocation:(NSDictionary *)location toLength:(NSUInteger)length
 {
-    return nil;
+    return [location[@"name"] substringToIndex:length];
 }
 
 - (NSDictionary *)dictionaryForLocationWithName:(NSString *)name latitude:(CGFloat)latitude longitude:(CGFloat)longitude
