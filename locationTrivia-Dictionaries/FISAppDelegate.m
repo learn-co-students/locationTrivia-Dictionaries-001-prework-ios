@@ -34,16 +34,34 @@
 
 - (NSArray *)namesOfLocations:(NSArray *)locations
 {
-    return nil;
+    NSArray *names = @[];
+    
+    for (NSDictionary *location in locations) {
+        names = [names arrayByAddingObject:location[@"name"]];
+    }
+    
+    return names;
 }
 
 - (BOOL)dictionaryIsValidLocation:(NSDictionary *)dictionary
 {
-    return nil;
+    NSArray *allKeys = [dictionary allKeys];
+    if ([allKeys count] != 3) {
+        return NO;
+    } else if (![dictionary objectForKey:@"name"] || ![dictionary objectForKey:@"latitude"] || ![dictionary objectForKey:@"longitude"]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (NSDictionary *)locationNamed:(NSString *)name inLocations:(NSArray *)locations
 {
+    for (NSDictionary *location in locations) {
+        if ([location[@"name"] isEqualToString:name]) {
+            return location;
+        }
+    }
     return nil;
 }
 
