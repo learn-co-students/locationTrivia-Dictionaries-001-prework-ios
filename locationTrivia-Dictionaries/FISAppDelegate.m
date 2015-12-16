@@ -18,12 +18,18 @@
 
 - (NSString *)stringByTruncatingNameOfLocation:(NSDictionary *)location toLength:(NSUInteger)length
 {
+    if ([location[@"name"] length] < length) {
+        return location[@"name"];
+    }
     return [location[@"name"] substringToIndex:length];
 }
 
 - (NSDictionary *)dictionaryForLocationWithName:(NSString *)name latitude:(CGFloat)latitude longitude:(CGFloat)longitude
 {
-    return nil;
+    NSDictionary *newLocation = @{ @"name"        :    name         ,
+                                   @"latitude"    :    @(latitude)  ,
+                                   @"longitude"   :    @(longitude) };
+    return newLocation;
 }
 
 - (NSArray *)namesOfLocations:(NSArray *)locations
