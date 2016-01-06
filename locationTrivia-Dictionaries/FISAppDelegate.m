@@ -18,7 +18,7 @@
 
 - (NSDictionary *)dictionaryForLocationWithName:(NSString *)name latitude:(CGFloat)latitude longitude:(CGFloat)longitude {
     
-    return nil;
+    return [NSDictionary dictionaryWithObjects:@[name, @(latitude), @(longitude)] forKeys:@[@"name", @"latitude", @"longitude"]];
 }
 
 - (NSArray *)namesOfLocations:(NSArray *)locations {
