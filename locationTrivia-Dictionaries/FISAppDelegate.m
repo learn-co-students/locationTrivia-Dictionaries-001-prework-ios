@@ -23,7 +23,11 @@
 
 - (NSArray *)namesOfLocations:(NSArray *)locations {
     
-    return nil;
+    NSMutableArray *namesOfLocations = [NSMutableArray arrayWithCapacity:[locations count]];
+    for (NSDictionary *location in locations) {
+        [namesOfLocations addObject:location[@"name"]];
+    }
+    return namesOfLocations;
 }
 
 - (BOOL)dictionaryIsValidLocation:(NSDictionary *)dictionary {
