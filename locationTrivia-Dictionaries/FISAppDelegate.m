@@ -56,6 +56,12 @@
 
 - (NSDictionary *)locationNamed:(NSString *)name inLocations:(NSArray *)locations {
     
+    for (NSDictionary *location in locations) {
+        if ([location[@"name"] isEqualToString:name]) {
+            return location;
+        }
+    }
+    
     return nil;
 }
 
