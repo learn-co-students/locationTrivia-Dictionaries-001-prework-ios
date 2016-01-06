@@ -12,7 +12,8 @@
 
 - (NSString *)stringByTruncatingNameOfLocation:(NSDictionary *)location toLength:(NSUInteger)length {
     
-    return nil;
+    NSMutableString *truncatedString = [location[@"name"] mutableCopy];
+    return [truncatedString substringToIndex:fmin(length, [truncatedString length])];
 }
 
 - (NSDictionary *)dictionaryForLocationWithName:(NSString *)name latitude:(CGFloat)latitude longitude:(CGFloat)longitude {
