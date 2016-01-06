@@ -32,20 +32,22 @@
 
 - (BOOL)dictionaryIsValidLocation:(NSDictionary *)dictionary {
     
-    NSArray *keys = [dictionary allKeys];
-    if ([keys count] != 3) {
+    if ([[dictionary allKeys] count] != 3) {
         return NO;
     }
     
-    if (![keys containsObject:@"name"]) {
+    NSString *name = dictionary[@"name"];
+    if (!name || [name isEqualToString:@""]) {
         return NO;
     }
     
-    if (![keys containsObject:@"latitude"]) {
+    NSNumber *latitude = dictionary[@"latitude"];
+    if (!latitude || (fabsf([latitude floatValue]) > 90.0f)) {
         return NO;
     }
     
-    if (![keys containsObject:@"longitude"]) {
+    NSNumber *longitude = dictionary[@"longitude"];
+    if (!longitude || (fabsf([longitude floatValue]) > 180.0f)) {
         return NO;
     }
     
