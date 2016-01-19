@@ -117,7 +117,7 @@ describe(@"FISAppDelegate", ^{
 
         it(@"Should return NO for a location with extra keys", ^{
             NSDictionary *locationWithTooManyKeys = @{ @"name"       : @"Atlantis"    ,
-                                                       @"latitude"   : @1             ,
+                                                        @"latitude"   : @1             ,
                                                        @"longitude"  : @1             ,
                                                        @"trivia"     : @[ @"legend" ] };
             expect([appDelegate dictionaryIsValidLocation:locationWithTooManyKeys]).to.beFalsy();
