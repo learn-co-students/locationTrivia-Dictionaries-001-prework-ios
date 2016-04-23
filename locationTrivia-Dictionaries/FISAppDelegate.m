@@ -4,6 +4,14 @@
 
 @implementation FISAppDelegate
 
+// Objectives:
+// 1. Apply what you've learned about collections to correctly store some real-world information.
+// 2. Verify that a dictionary contains the expected keys.
+// 3. Retrieve a stored dictionary by the value for a key.
+
+// Advanced:
+// 1. Advanced: Write additional checks to determine that the value for latitude falls between -90.0 and 90.0, that the value for longitude falls between 180.0 and -180.0, and that the value for name is not an empty string. However, there are no tests for these cases.
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
