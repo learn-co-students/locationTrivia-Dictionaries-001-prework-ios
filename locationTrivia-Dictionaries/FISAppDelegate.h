@@ -12,4 +12,17 @@
  
  */
 
+- (NSString *)stringByTruncatingNameOfLocation:(NSDictionary *)location toLength:(NSUInteger)length;
+
+- (NSDictionary *)dictionaryForLocationWithName:(NSString *)name
+                                       latitude:(CGFloat)latitude
+                                      longitude:(CGFloat)longitude;
+
+- (NSArray *)namesOfLocations:(NSArray *)locations;
+
+- (BOOL)dictionaryIsValidLocation:(NSDictionary *)location;
+
+
+- (NSDictionary *)locationNamed:(NSString *)name inLocations:(NSArray *)locations;
+
 @end
