@@ -23,6 +23,9 @@
     if (length < 0){
         return name;
     }
+    else if (length > name.length) {
+        return name;
+    }
     else {
         return [name substringToIndex:length];
     }
@@ -33,11 +36,14 @@
 //dictionaryForLocationWithName:latitude:longitude: should return a dictionary containing the three argument values stored to keys of the argument names (@"name", @"latitude", @"longitude").
 
 -(NSDictionary *)dictionaryForLocationWithName:(NSString *)name
-                                      latitude:(NSNumber *)latitude
-                                     longitude:(NSNumber *)longitude{
+                                      latitude:(CGFloat)latitude
+                                     longitude:(CGFloat)longitude{
+    
+    NSNumber *numLatitude = @(latitude);
+    NSNumber *numLongitude = @(longitude);
     NSDictionary *location = @{@"name" : name,
-                               @"latitude" : [latitude floatValue],
-                         @"longitude" : [longitude floatValue]};
+                               @"latitude" : numLatitude,
+                               @"longitude" : numLongitude};
     return location;
 }
 
@@ -60,13 +66,14 @@
 
 //Advanced: Write additional checks to determine that the value for latitude falls between -90.0 and 90.0, that the value for longitude falls between 180.0 and -180.0, and that the value for name is not an empty string. However, there are no tests for these cases.
 
--(BOOL)dictionaryIsValidLocations : (NSDictionary *)location{
-    if (location.allKeys.count != 3) {
-        return NO;
-    }
-    return YES;
+-(BOOL)dictionaryIsValidLocation : (NSDictionary *)location{
+    NSArray *neededKeys = [location allKeys];
+    bool *validLocation = ([neededKeys containsObject:@"name"] &&
+                           [neededKeys containsObject:@"longitude"] &&
+                           [neededKeys containsObject:@"latitude"] &&
+                           (neededKeys.count == 3));
+    return validLocation;
 }
-
 // locationNamed:inLocations: that takes two arguments, an NSString called name and an NSArray called locations; and returns an NSDictionary.
 // locationNamed:inLocations: should return the location dictionary in the submitted locations array with the matching value for the name key as the submitted name string. If there are no matches, then it should return nil.
 
