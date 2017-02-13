@@ -44,7 +44,7 @@
 		D8327C721923AADA0077B66A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8327C741923AADA0077B66A /* locationTrivia-Dictionaries-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "locationTrivia-Dictionaries-Prefix.pch"; sourceTree = "<group>"; };
 		D8327C751923AADA0077B66A /* FISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISAppDelegate.h; sourceTree = "<group>"; };
-		D8327C761923AADA0077B66A /* FISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegate.m; sourceTree = "<group>"; };
+		D8327C761923AADA0077B66A /* FISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegate.m; sourceTree = "<group>"; tabWidth = 5; };
 		D8327C781923AADA0077B66A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D8327C7E1923AADA0077B66A /* locationTrivia-DictionariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "locationTrivia-DictionariesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8327C7F1923AADA0077B66A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
